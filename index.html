@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10091f">
+<title>Purumi Music</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{color-scheme:dark;--bg:#10091f;--panel:#1d1231;--purple:#a78bfa;--pink:#f0abfc;--muted:#b7abc9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#352052 0%,var(--bg) 58%);color:#fff;font:16px system-ui,-apple-system,sans-serif;min-height:100vh;padding:22px 16px 96px}
+main{max-width:520px;margin:auto}.brand{display:flex;align-items:center;gap:12px;margin:8px 0 28px}.logo{display:grid;place-items:center;width:52px;height:52px;border-radius:17px;background:linear-gradient(135deg,#c084fc,#7c3aed);font-size:28px;font-weight:900;box-shadow:0 8px 30px #7c3aed55}.brand h1{font-size:21px;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.hero,.panel{border:1px solid #ffffff17;background:#ffffff0b;border-radius:24px;padding:22px;margin-bottom:16px;box-shadow:0 12px 40px #0002}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--pink);font-weight:800}.hero h2{font-size:29px;line-height:1.15;margin:12px 0}.hero p,.muted{color:var(--muted);line-height:1.55;font-size:14px}.btn{display:flex;justify-content:center;align-items:center;text-decoration:none;border:0;border-radius:14px;padding:14px 16px;background:linear-gradient(100deg,#a855f7,#7c3aed);color:white;font-weight:750;width:100%;margin-top:12px;cursor:pointer}.btn.secondary{background:#ffffff10;border:1px solid #ffffff20}.section-title{font-size:17px;margin:0 0 12px}.features{display:grid;grid-template-columns:1fr 1fr;gap:10px}.feature{background:#ffffff08;border:1px solid #ffffff12;padding:14px;border-radius:16px}.feature b{display:block;margin:7px 0 4px;font-size:14px}.feature span{font-size:12px;color:var(--muted);line-height:1.4}.emoji{font-size:23px}.page{display:none}.page.active{display:block}.bottom{position:fixed;bottom:0;left:0;right:0;padding:10px 8px calc(10px + env(safe-area-inset-bottom));background:#10091fee;backdrop-filter:blur(18px);border-top:1px solid #ffffff18;display:flex;justify-content:center;gap:6px}.nav{background:transparent;border:0;color:var(--muted);padding:9px 12px;border-radius:12px;font-size:12px;cursor:pointer}.nav.active{color:#fff;background:#a855f733}.stat{font-size:12px;color:var(--muted);margin-top:14px}code{word-break:break-all;color:#e9d5ff}
+</style>
+</head>
+<body>
+<main>
+<header class="brand"><div class="logo">P</div><div><h1>Purumi Music</h1><p>Music for your Telegram group</p></div></header>
+<section class="page active" id="home">
+<div class="hero"><div class="eyebrow">TELEGRAM MUSIC BOT</div><h2>Musik favoritmu,<br>langsung di grup. 🎧</h2><p>Putar musik bersama teman, jelajahi fitur Purumi, dan mulai dengarkan musik di voice chat Telegram.</p><a class="btn" href="https://t.me/Purumi_musicbot?start=miniapp" onclick="openBot(event)">🎵 Buka Purumi Music Bot</a><a class="btn secondary" href="https://t.me/purumiCLiBotz_official">📣 Gabung Channel Resmi</a></div>
+<div class="panel"><h3 class="section-title">Kenapa Purumi?</h3><div class="features">
+<div class="feature"><div class="emoji">🎶</div><b>Putar musik</b><span>Mulai musik dari perintah bot di grup.</span></div>
+<div class="feature"><div class="emoji">🔊</div><b>Voice chat</b><span>Nikmati musik bersama anggota grup.</span></div>
+<div class="feature"><div class="emoji">⚡</div><b>Mudah digunakan</b><span>Panduan singkat untuk pengguna baru.</span></div>
+<div class="feature"><div class="emoji">💜</div><b>Dikembangkan terus</b><span>Ikuti pembaruan lewat channel resmi.</span></div>
+</div></div></section>
+<section class="page" id="features"><div class="panel"><h2 class="section-title">Panduan singkat</h2><p class="muted">1. Tambahkan @Purumi_musicbot ke grup Telegram kamu.</p><p class="muted">2. Pastikan bot memiliki izin yang diperlukan di grup.</p><p class="muted">3. Mulai voice chat, lalu gunakan perintah musik sesuai daftar perintah bot.</p><p class="muted">4. Jika ada masalah, cek pembaruan dan panduan di channel resmi.</p><a class="btn" href="https://t.me/Purumi_musicbot">Buka Bot</a><a class="btn secondary" href="https://t.me/Assist_purumi">Buka Asisten</a></div></section>
+<section class="page" id="referral"><div class="panel"><div class="eyebrow">BAGIKAN KE TEMAN</div><h2>Kenalkan Purumi 💜</h2><p class="muted">Bagikan bot ini ke teman atau grup yang mungkin membutuhkan pemutar musik Telegram.</p><button class="btn" onclick="shareBot()">↗ Bagikan Bot</button><button class="btn secondary" onclick="copyLink()">Salin tautan bot</button><p id="share-status" class="stat">Program referral dengan pencatatan undangan belum diaktifkan.</p></div></section>
+<section class="page" id="profile"><div class="panel"><h2 class="section-title">Profil Telegram</h2><p id="profile-name">Halo, pendengar Purumi! 👋</p><p id="profile-detail" class="muted">Buka Mini App ini dari Telegram untuk melihat informasi akun yang tersedia.</p><p class="stat">Profil demo saja. Identitas pengguna harus divalidasi di server untuk fitur sensitif.</p></div></section>
+</main>
+<nav class="bottom"><button class="nav active" data-page="home">⌂ Beranda</button><button class="nav" data-page="features">♫ Panduan</button><button class="nav" data-page="referral">↗ Bagikan</button><button class="nav" data-page="profile">◉ Profil</button></nav>
+<script>
+const tg=window.Telegram&&window.Telegram.WebApp;
+if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#10091f');tg.setBackgroundColor('#10091f')}catch(e){}}
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n===b));document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===b.dataset.page));window.scrollTo({top:0,behavior:'smooth'})}));
+if(tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user){const u=tg.initDataUnsafe.user;document.getElementById('profile-name').textContent='Halo, '+(u.first_name||'pendengar')+'! 👋';document.getElementById('profile-detail').textContent='Username: '+(u.username?'@'+u.username:'tidak tersedia')+' · ID akun tersedia di Telegram.'}
+function openBot(e){if(tg){e.preventDefault();tg.openTelegramLink('https://t.me/Purumi_musicbot?start=miniapp')}}
+function shareBot(){const url='https://t.me/Purumi_musicbot';if(tg&&tg.openTelegramLink){tg.openTelegramLink('https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent('Coba Purumi Music Bot untuk musik di grup Telegram!'))}else if(navigator.share){navigator.share({title:'Purumi Music Bot',text:'Coba Purumi Music Bot untuk musik di grup Telegram!',url})}else{copyLink()}}
+async function copyLink(){try{await navigator.clipboard.writeText('https://t.me/Purumi_musicbot');document.getElementById('share-status').textContent='Tautan bot berhasil disalin.'}catch(e){document.getElementById('share-status').textContent='Salin tautan ini: https://t.me/Purumi_musicbot'}}
+</script>
+</body></html>
